@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Password Generator</h1>
+<div class="form-group">
+    <form method="post" action="/generator/">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+</div>
+    <style>
+        .button{  
+            margin: 8em
+                }
+    </style>
+    <button><type="submit" class="button" name="generate">Generate</button>     
+    <br></br>
+    <p>Password is : {{pw}} </p>
+</form>
+{% endblock %}
+
